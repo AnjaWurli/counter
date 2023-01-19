@@ -14,15 +14,15 @@ function count() {
   main.style.setProperty("--counter", `${num.innerText - cent}%`);
 }
 
-function countKey(event) {
-  //only with space or enter
+main.addEventListener("click", count);
+document.addEventListener("keydown", (event) => {
   if (event.code === "Enter" || event.code === "Space") {
     count();
   }
-}
-
-document.addEventListener("click", count);
-document.addEventListener("keydown", countKey);
+});
 
 //reset
-button.addEventListener("click", () => (num.innerText = -1));
+button.addEventListener("click", () => {
+  num.innerText = 0;
+  main.style.removeProperty("--counter");
+});
