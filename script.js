@@ -10,10 +10,8 @@ function count() {
   if (num.innerText % 100 === 1 && num.innerText > 1) {
     cent += 100;
   }
-  console.log(cent);
   //graphic:
   main.style.setProperty("--counter", `${num.innerText - cent}%`);
-  console.log(main.style.getPropertyValue("--counter"));
 }
 
 function countKey(event) {
