@@ -9,6 +9,9 @@ function count() {
 
   if (num.innerText % 100 === 1 && num.innerText > 1) {
     cent += 100;
+    document
+      .querySelector("html")
+      .style.setProperty("--color", `${randomColor()}`);
   }
   //graphic:
   main.style.setProperty("--counter", `${num.innerText - cent}%`);
@@ -26,3 +29,12 @@ button.addEventListener("click", () => {
   num.innerText = 0;
   main.style.removeProperty("--counter");
 });
+
+//random color after every 100
+function random(min, max) {
+  const num = Math.floor(Math.random() * (max - min)) + min;
+  return num;
+}
+function randomColor() {
+  return `rgb(${random(0, 255)}, ${random(0, 255)}, ${random(0, 255)})`;
+}

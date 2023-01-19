@@ -6,10 +6,11 @@
 html {
   font-size: 16px;
   font-family: monospace;
+  --color: gold;
 }
 
 header {
-  background-color: gold;
+  background-color: var(--color);
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
@@ -41,7 +42,11 @@ body {
 }
 
 main {
-  background-image: linear-gradient(90deg, gold var(--counter), white 0);
+  background-image: linear-gradient(
+    90deg,
+    var(--color) var(--counter),
+    white 0
+  );
   _border: 10px solid red;
   display: grid;
   place-content: center;
