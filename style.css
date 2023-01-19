@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  font-family: monospace;
+}
+
+header {
+  background-color: gold;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+button {
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0 white;
+  font-size: 1.5rem;
+  margin: 1rem 0.5rem;
+  height: 2.5rem;
+  width: 6rem;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+main {
+  background-image: linear-gradient(90deg, gold var(--counter), white 0);
+  _border: 10px solid red;
+  display: grid;
+  place-content: center;
+}
+
+label {
+  font-size: 5rem;
+}
