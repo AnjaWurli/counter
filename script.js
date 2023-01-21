@@ -29,6 +29,7 @@ button.addEventListener("click", () => {
   num.innerText = 0;
   main.style.removeProperty("--counter");
   button.blur();
+  cent = 0;
 });
 
 //random color after every 100
