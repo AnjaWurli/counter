@@ -10,18 +10,24 @@
 </head>
 
 <body>
-    <header>
-        <section>
-            <h1>Counter</h1>
-            <p>(click the white area or hit space / enter to count)</p>
-        </section>
-        <button>Reset</button>
-    </header>
-    <main>
-        <label id="counter">0</label>
-    </main>
-
-    <script src="script.js"></script>
+    <div id="app">
+        <header :style="{ '--color': color}">
+            <section>
+                <h1>Counter</h1>
+                <p>(click the white area or hit space / enter to count)</p>
+            </section>
+            <div class="rangeWrapper">
+                <label for="increaseBy">increase by: {{increaseBy}}</label>
+                <input id="increaseBy" type="range" min="1" max="20" v-model.number="increaseBy">
+            </div>
+            <button @click="reset">Reset</button>
+        </header>
+        <main @click="increaseCounter" :style="{ '--counter': (counter-hundred)+'%', '--color': color}">
+            <div id="counter">{{counter}}</div>
+        </main>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>

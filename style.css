@@ -35,7 +35,7 @@ button:active {
   box-shadow: none;
 }
 
-body {
+#app {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -47,11 +47,19 @@ main {
     var(--color) var(--counter),
     white 0
   );
-  _border: 10px solid red;
   display: grid;
   place-content: center;
 }
 
-label {
+#counter {
   font-size: 5rem;
+}
+
+.rangeWrapper {
+  font-size: 1rem;
+  display: grid;
+  padding-block: 1rem;
+}
+#increaseBy {
+  accent-color: black;
 }
