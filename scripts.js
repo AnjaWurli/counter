@@ -15,10 +15,17 @@ Vue.createApp({
         this.color = this.randomColor();
       }
     },
-    reset() {
+    countKey(event) {
+      //only with space or enter
+      if (event.code === "Enter" || event.code === "Space") {
+        this.increaseCounter();
+      }
+    },
+    reset(e) {
       this.counter = 0;
       this.hundred = 0;
       this.color = "";
+      e.target.blur();
     },
     random(min, max) {
       const num = Math.floor(Math.random() * (max - min)) + min;
@@ -30,5 +37,8 @@ Vue.createApp({
         255
       )})`;
     },
+  },
+  created() {
+    window.addEventListener("keydown", this.countKey);
   },
 }).mount("#app");
